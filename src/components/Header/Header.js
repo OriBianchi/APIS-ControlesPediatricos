@@ -1,8 +1,13 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+
+
+// Icon
+import Health from '@material-ui/icons/LocalHospital';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -16,7 +21,7 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 import { Link } from "react-router-dom";
-
+import { Grid } from "@material-ui/core";
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
@@ -63,9 +68,12 @@ export default function Header(props) {
   });
   const brandComponent = (
     <Link to={"/"} className={classes.link}>
-      <Button className={classes.title} link to>
+    <Grid>
+      <Button className={classes.title} >
+      <Health className="slick-icons" style={{ fontSize: 30 }}/>
         {brand}
       </Button>
+      </Grid>
     </Link>
   );
   return (

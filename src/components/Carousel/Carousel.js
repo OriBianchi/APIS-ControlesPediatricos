@@ -4,7 +4,6 @@ import React from "react";
 import Carousel from "react-slick";
 // material-ui components
 // @material-ui/icons
-import LocationOn from "@material-ui/icons/LocationOn";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -13,6 +12,8 @@ import Card from "components/Card/Card.js";
 import image1 from "assets/img/Carousel/cr1.png";
 import image2 from "assets/img/Carousel/cr2.png";
 import image3 from "assets/img/Carousel/cr3.png";
+
+//                 <Health className="slick-icons" style={{ fontSize: 50 }}/>  
 
 export default function SectionCarousel(){
   const settings = {
@@ -35,10 +36,12 @@ export default function SectionCarousel(){
                 className="slick-image"
               />
               <div className="slick-caption">
-                <h2>
-                  <LocationOn className="slick-icons" />Yellowstone
-                  National Park, United States
+              <h2>
+                  Guardá tus visitas en un instante
                 </h2>
+                <h4>
+                  Con PediaCare, mantener un registro de las consultas médicas de tus hijos es más fácil que nunca.
+                </h4>
               </div>
             </div>
             <div>
@@ -48,10 +51,12 @@ export default function SectionCarousel(){
                 className="slick-image"
               />
               <div className="slick-caption">
-                <h2>
-                  <LocationOn className="slick-icons" />Somewhere Beyond,
-                  United States
+              <h2>
+                  Seguimiento Constante
                 </h2>
+                <h4>
+                  Te damos todas las herramientas para asistirte en mantener a tu hijo saludable.
+                </h4>
               </div>
             </div>
             <div>
@@ -62,9 +67,11 @@ export default function SectionCarousel(){
               />
               <div className="slick-caption">
                 <h2>
-                  <LocationOn className="slick-icons" />Yellowstone
-                  National Park, United States
+                  Aprobado por los Especialistas
                 </h2>
+                <h4>
+                  9 de cada 10 pediatras recomiendan PediaCare para padres primerizos y experimentados.
+                </h4>
               </div>
             </div>
           </Carousel>

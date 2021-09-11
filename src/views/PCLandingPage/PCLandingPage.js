@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -40,7 +41,7 @@ export default function LandingPage(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white",
+          color: "info",
         }}
         {...rest}
       />
