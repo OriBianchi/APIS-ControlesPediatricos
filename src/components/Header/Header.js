@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -60,7 +62,8 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = 
+  <Button className={classes.title}>{brand} </Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
