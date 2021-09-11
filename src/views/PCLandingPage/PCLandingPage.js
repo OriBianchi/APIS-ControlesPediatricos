@@ -48,7 +48,8 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <Carousel />
           <Grid>
-            {/*               <h1 className={classes.title}>Your Story Starts With Us.</h1>
+            {/*     
+              <h1 className={classes.title}>Hola</h1>
               <h4>
                 Every landing page needs a small description after the big bold
                 title, that{"'"}s why we added this text here. Add here all the

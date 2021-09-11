@@ -10,9 +10,9 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 
-import image1 from "./bg.jpg";
-import image2 from "./bg2.jpg";
-import image3 from "./bg3.jpg";
+import image1 from "assets/img/Carousel/cr1.png";
+import image2 from "assets/img/Carousel/cr2.png";
+import image3 from "assets/img/Carousel/cr3.png";
 
 export default function SectionCarousel(){
   const settings = {
@@ -35,10 +35,10 @@ export default function SectionCarousel(){
                 className="slick-image"
               />
               <div className="slick-caption">
-                <h4>
+                <h2>
                   <LocationOn className="slick-icons" />Yellowstone
                   National Park, United States
-                </h4>
+                </h2>
               </div>
             </div>
             <div>
@@ -48,10 +48,10 @@ export default function SectionCarousel(){
                 className="slick-image"
               />
               <div className="slick-caption">
-                <h4>
+                <h2>
                   <LocationOn className="slick-icons" />Somewhere Beyond,
                   United States
-                </h4>
+                </h2>
               </div>
             </div>
             <div>
@@ -61,10 +61,10 @@ export default function SectionCarousel(){
                 className="slick-image"
               />
               <div className="slick-caption">
-                <h4>
+                <h2>
                   <LocationOn className="slick-icons" />Yellowstone
                   National Park, United States
-                </h4>
+                </h2>
               </div>
             </div>
           </Carousel>
