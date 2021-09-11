@@ -21,7 +21,7 @@ export default function ProductSection() {
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={8}>
+        <GridItem s={12} sm={12} md={8}>
           <img src={Wachines} alt="Niños"></img>
           <h2 className={classes.title}>
             Todos tus controles, en un mismo lugar.
