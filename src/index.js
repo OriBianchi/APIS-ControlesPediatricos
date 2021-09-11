@@ -10,7 +10,7 @@ import Components from "views/Components/Components.js";
 import PCLandingPage from "views/PCLandingPage/PCLandingPage";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
-import LoginPage from "views/LoginPage/LoginPage.js";
+import PCLoginPage from "views/PCLoginPage/LoginPage.js";
 
 var hist = createBrowserHistory();
 
@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route path="/components" component={Components} />
       <Route path="/landing-page" component={LandingPage} />
       <Route path="/profile-page" component={ProfilePage} />
-      <Route path="/login-page" component={LoginPage} />
+      <Route path="/login-page" component={PCLoginPage} />
       <Route path="/" component={PCLandingPage} />
     </Switch>
   </Router>,
