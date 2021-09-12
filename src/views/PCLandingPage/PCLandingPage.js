@@ -18,11 +18,8 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 import Carousel from "components/Carousel/Carousel.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
+import Articulos from "./Sections/ArticulosInteres.js";
 
 const dashboardRoutes = [];
 
@@ -41,7 +38,7 @@ export default function LandingPage(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white",
+          color: "info",
         }}
         {...rest}
       />
@@ -73,9 +70,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
+          <Articulos />
         </div>
       </div>
       <Footer />

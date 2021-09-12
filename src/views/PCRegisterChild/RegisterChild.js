@@ -3,10 +3,13 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
+
 // @material-ui/icons
-import Email from "@material-ui/icons/Email";
-//import People from "@material-ui/icons/People";
+import FingerprintIcon from '@material-ui/icons/Fingerprint';
+import ChildCareIcon from '@material-ui/icons/ChildCare';
+//Calendario 
+
+
 // core components
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -56,66 +59,80 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>
-                    <h4>Iniciar Sesión</h4>
-                
+                    <h4>Registrar Hij@</h4>
+
                   </CardHeader>
                   <CardBody>
 
                     <CustomInput
-                      labelText="Email..."
-                      id="email"
+                      labelText="Nombre..."
+                      id="Nombre"
                       formControlProps={{
                         fullWidth: true,
                       }}
                       inputProps={{
-                        type: "email",
+                        type: "Nombre",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Email className={classes.inputIconsColor} />
+                            <ChildCareIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
                       }}
                     />
                     <CustomInput
-                      labelText="Contraseña"
-                      id="pass"
+                      labelText="Apellido..."
+                      id="Apellido"
                       formControlProps={{
                         fullWidth: true,
                       }}
                       inputProps={{
-                        type: "Contraseña",
+                        type: "Apellido",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <ChildCareIcon className={classes.inputIconsColor} />
                           </InputAdornment>
                         ),
-                        autoComplete: "off",
                       }}
                     />
-                    <p1 style={{padding:"65px"}} >
-                    
-                    <Link to={"/"} className={classes.link}> ¿Olvidaste tu contraseña?     </Link>
-                      
-                  </p1>
+
+                    <CustomInput
+                      labelText="DNI..."
+                      id="DNI"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "DNI",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <FingerprintIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
                   
+
+
+
+                    <p1 style={{ padding: "65px" }} >
+
+                      <Link to={"register-page"} className={classes.link}> ¿Olvidaste tu contraseña?     </Link>
+
+                    </p1>
+
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button round color="info" size="lg">
-                    
-                      Ingresar
+
+                      Continuar
                     </Button>
                   </CardFooter>
-                 
-                  
-                  
-                  
-                  <p1 style={{padding:"72.5px"}} >
-                    ¿No tenes una cuenta?    
-                    <Link to={"register-page"} className={classes.link}> Registrate</Link>
-          
-                  </p1>
+
+
+
+
+
+
                   <p className={classes.divider}></p>
                 </form>
               </Card>
