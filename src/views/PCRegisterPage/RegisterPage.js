@@ -164,17 +164,17 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button round color="info" size="lg">
-
-                      Ingresar
-                    </Button>
+                    <Link to={"register-child-page"} className={classes.link}>
+                      <Button round color="info" size="lg">Continuar
+                      </Button>
+                    </Link>
                   </CardFooter>
-                  
-                  
-                  <p1 style={{padding:"80px"}} >
-                    ¿Ya tenes una cuenta?    
+
+
+                  <p1 style={{ padding: "80px" }} >
+                    ¿Ya tenes una cuenta?
                     <Link to={"login-page"} className={classes.link}> Ingresá </Link>
-                      
+
                   </p1>
 
 
