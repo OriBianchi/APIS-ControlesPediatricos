@@ -6,10 +6,12 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-//import People from "@material-ui/icons/People";
+import People from "@material-ui/icons/People";
+import PhoneIcon from '@material-ui/icons/Phone';
+import FingerprintIcon from '@material-ui/icons/Fingerprint';
 // core components
 import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import HeaderLinksLogin from "components/Header/PCHeaderLinksLogin.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -23,7 +25,10 @@ import { Link } from "react-router-dom";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import image from "assets/img/bg7.jpg";
 
+
 const useStyles = makeStyles(styles);
+
+
 
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
@@ -38,7 +43,9 @@ export default function LoginPage(props) {
         absolute
         color="info"
         brand="PediaCare"
-        rightLinks={<HeaderLinks />
+
+        rightLinks={<HeaderLinksLogin
+        />
         }
         {...rest}
       />
@@ -56,11 +63,72 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>
-                    <h4>Iniciar Sesión</h4>
-                
+                    <h4>Registrarse</h4>
+
+
                   </CardHeader>
                   <CardBody>
+                    <CustomInput
+                      labelText="Nombre..."
+                      id="Nombre"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "Nombre",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <People className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Apellido..."
+                      id="Apellido"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "Apellido",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <People className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
 
+                    <CustomInput
+                      labelText="Número de celular..."
+                      id="Número de celular"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "Número de celular",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <PhoneIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <CustomInput
+                      labelText="DNI..."
+                      id="DNI"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "DNI",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <FingerprintIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
                     <CustomInput
                       labelText="Email..."
                       id="email"
@@ -94,29 +162,25 @@ export default function LoginPage(props) {
                         autoComplete: "off",
                       }}
                     />
-                    <p1 style={{padding:"65px"}} >
-                    
-                    <Link to={"/"} className={classes.link}> ¿Olvidaste tu contraseña?     </Link>
-                      
-                  </p1>
-                  
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button round color="info" size="lg">
-                    
-                      Ingresar
-                    </Button>
+                    <Link to={"register-child-page"} className={classes.link}>
+                      <Button round color="info" size="lg">Continuar
+                      </Button>
+                    </Link>
                   </CardFooter>
-                 
-                  
-                  
-                  
-                  <p1 style={{padding:"72.5px"}} >
-                    ¿No tenes una cuenta?    
-                    <Link to={"register-page"} className={classes.link}> Registrate</Link>
-          
+
+
+                  <p1 style={{ padding: "80px" }} >
+                    ¿Ya tenes una cuenta?
+                    <Link to={"login-page"} className={classes.link}> Ingresá </Link>
+
                   </p1>
+
+
+
                   <p className={classes.divider}></p>
+
                 </form>
               </Card>
             </GridItem>
