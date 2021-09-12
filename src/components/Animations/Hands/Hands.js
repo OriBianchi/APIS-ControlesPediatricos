@@ -6,9 +6,9 @@ import '../style.css';
 
 function App() {
     return (
-        <div className="App">
-            <img src={imagen} className="bee" alt="Abeja" />
-            <img src={imagen2} className="bee" alt="Abeja" />
+        <div className="healthcare-animation">
+            <img src={imagen} className="h-hands" alt="Manos" />
+            <img src={imagen2} className="h-heart" alt="Corazon" />
         </div>
     );
 }
