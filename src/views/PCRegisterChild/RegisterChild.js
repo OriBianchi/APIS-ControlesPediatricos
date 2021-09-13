@@ -8,7 +8,13 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 //Calendario 
+//import Date from "react-datetime";
+import "assets/css/calendario.css";
+import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 
+
+//import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
 
 // core components
 import Header from "components/Header/Header.js";
@@ -110,22 +116,56 @@ export default function LoginPage(props) {
                         ),
                       }}
                     />
-                  
+
+                    <GridItem xs={12} sm={12} md={14}>
+
+                      <GridContainer>
+                        <p className={classes.divider}>Fecha de nacimiento:</p>
+                        <GridItem xs={12} sm={12} md={6}>
+
+                          <br />
+                          <FormControl fullWidth>
+                            <DatePickerComponent placeholder="              ..."format="dd-MMM-yy"></DatePickerComponent>
+                            
+                          </FormControl>
+                        </GridItem>
+                      </GridContainer>
+                    </GridItem>
 
 
 
-                    <p1 style={{ padding: "65px" }} >
 
-                      <Link to={"register-page"} className={classes.link}> ¿Olvidaste tu contraseña?     </Link>
 
-                    </p1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <p1 style={{ padding: "65px" }} ></p1>
 
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button round color="info" size="lg">
+                    <Link to={"register-page"} className={classes.link}>
+                      <Button round color="default" size="md">
+                        Anterior
+                      </Button>
+                    </Link>
+                    <Link to={"register-page"} className={classes.link}>
+                      <Button round color="info" size="md">
 
-                      Continuar
-                    </Button>
+                        Continuar
+                      </Button>
+                    </Link>
                   </CardFooter>
 
 
@@ -141,6 +181,6 @@ export default function LoginPage(props) {
         </div>
         <Footer whiteFont />
       </div>
-    </div>
+    </div >
   );
 }
