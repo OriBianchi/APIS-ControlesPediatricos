@@ -13,13 +13,14 @@ import Footer from "components/Footer/Footer.js";
 // import GridContainer from "components/Grid/GridContainer.js";
 // import GridItem from "components/Grid/GridItem.js";
 // import Button from "components/CustomButtons/Button.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
-import Carousel from "components/Carousel/Carousel.js";
+import HeaderLinksLoggedIn from "components/Header/PCHeaderLinksLoggedIn.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-// Sections for this page
-import Articulos from "./Sections/ArticulosInteres.js";
 
+
+
+// Sections for this page
+import BienvenidaUsuario from "./Sections/BienvenidaUsuario.js";
+import Parallax from "components/Parallax/Parallax.js";
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -33,22 +34,19 @@ export default function LandingPage(props) {
         color="info"
         routes={dashboardRoutes}
         brand="PediaCare"
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinksLoggedIn />}
         fixed
-        changeColorOnScroll={{
-          height: 600,
-          color: "transparent",
-        }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/lp.png").default}>
-        <div className={classes.container}>
-          <Carousel />
-        </div>
-      </Parallax>
+      <Parallax
+        small
+        filter
+        image={require("assets/img/profile-bg.jpg").default}
+      />
+
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <Articulos />
+          <BienvenidaUsuario />
         </div>
       </div>
       <Footer />

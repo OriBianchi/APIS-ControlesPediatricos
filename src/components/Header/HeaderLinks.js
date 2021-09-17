@@ -21,7 +21,7 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 import { Link } from "react-router-dom";
-
+import { Box } from "@material-ui/core";
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
@@ -51,30 +51,32 @@ export default function HeaderLinks(props) {
           ]}
         />
       </ListItem> */}
-          <ListItem className={classes.listItem}>
-            <Button
-              href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-              color="info"
-              href="/login-page"
-              target="_blank"
-              className={classes.navLink}
-              round
-            >
-              <AccountCircleOutlinedIcon className={classes.icons} /> Iniciar Sesión
-            </Button>
-          </ListItem>
-          <ListItem className={classes.listItem}>
-            <Button
-              href="/"
-              color="warning"
-              target="_blank"
-              className={classes.navLink}
-              round
-            >
-              <AccountCircleOutlinedIcon className={classes.icons} /> Registrarme
-            </Button>
-          </ListItem>
-          {/*       <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItem}>
+        <Box m={0.3}>
+          <Button
+            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+            color="info"
+            href="/login-page"
+            target="_blank"
+            className={classes.navLink}
+          >
+            <AccountCircleOutlinedIcon className={classes.icons} /> Iniciar Sesión
+          </Button>
+        </Box>
+      </ListItem>
+        <ListItem className={classes.listItem}>
+        <Box m={0.3}>
+          <Button
+            href="/register-child-page"
+            color="warning"
+            target="_blank"
+            className={classes.navLink}
+          >
+            <AccountCircleOutlinedIcon className={classes.icons} /> Registrarme
+          </Button>
+          </Box>
+        </ListItem>
+      {/*       <ListItem className={classes.listItem}>
         <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
@@ -96,7 +98,7 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem> */}
-          {/*       <ListItem className={classes.listItem}>
+      {/*       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
@@ -113,7 +115,7 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem> */}
-          {/*       <ListItem className={classes.listItem}>
+      {/*       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
@@ -130,6 +132,6 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem> */}
-        </List>
-        );
+    </List>
+  );
 }
