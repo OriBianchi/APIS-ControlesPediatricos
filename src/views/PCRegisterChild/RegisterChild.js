@@ -11,6 +11,10 @@ import ChildCareIcon from '@material-ui/icons/ChildCare';
 //import Date from "react-datetime";
 import "assets/css/calendario.css";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+// Sexo
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
 
 
 //import InputLabel from "@material-ui/core/InputLabel";
@@ -35,6 +39,8 @@ import image from "assets/img/bg7.jpg";
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
+  const [selectedEnabled, setSelectedEnabled] = React.useState("b");
+
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -132,26 +138,84 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <p1 style={{ padding: "65px" }} ></p1>
+              <GridItem xs={12} sm={6} md={4} lg={3}>
+              <div className={classes.title}>
+                <p className={classes.divider}>Sexo:</p>
+              </div>
+              <div style={{padding: "0px 0px 0px 30px" }} 
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedEnabled === "a"}
+                      onChange={() => setSelectedEnabled("a")}
+                      value="a"
+                      name="radio button enabled"
+                      aria-label="A"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        root: classes.radioRoot,
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot,
+                  }}
+                  label="Masculino"
+                />
+              </div>
+              <div style={{padding: "0px 0px 0px 30px" }} 
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedEnabled === "b"}
+                      onChange={() => setSelectedEnabled("b")}
+                      value="b"
+                      name="radio button enabled"
+                      aria-label="B"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        root: classes.radioRoot,
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot,
+                  }}
+                  label="Feminino"
+                />
+              </div>
+          
+            </GridItem>
+
+
+
 
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
@@ -160,15 +224,15 @@ export default function LoginPage(props) {
                         Anterior
                       </Button>
                     </Link>
-                    <Link to={"register-page"} className={classes.link}>
+                    <Link to={"register-datos-child-page"} className={classes.link}>
                       <Button round color="info" size="md">
 
                         Continuar
                       </Button>
                     </Link>
                   </CardFooter>
-
-
+            
+              
 
 
 

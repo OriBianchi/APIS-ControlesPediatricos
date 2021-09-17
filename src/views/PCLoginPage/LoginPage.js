@@ -186,7 +186,7 @@ export default function LoginPage(props) {
                         >
                           Cancelar
                         </Button>
-                        <Button color="info" round>
+                        <Button color="info" round onClick={() => alert("¡Te enviamos un correo con tu nueva contraseña!")}>
                           Enviar
                         </Button>
 
@@ -195,7 +195,7 @@ export default function LoginPage(props) {
                   
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Link to={"/"} className={classes.link}>
+                    <Link to={"landing-page-li"} className={classes.link}>
                       <Button round color="info" size="lg">
 
                         Ingresar

@@ -13,7 +13,7 @@ import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import Header from "components/Header/Header.js";
 import HeaderLinksLogin from "components/Header/PCHeaderLinksLogin.js";
 import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
+import GridContainer from "components/Grid/GridContainer copy.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
