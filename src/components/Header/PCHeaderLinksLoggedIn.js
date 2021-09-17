@@ -31,7 +31,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Box m={0.3}>
           <Button
-            href="/register-child-page"
+            href="/profile-page"
             color="primary"
             target="_blank"
             className={classes.navLink}
@@ -40,7 +40,7 @@ export default function HeaderLinks(props) {
           </Button>
         </Box>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItegitm}>
         <Box m={0.3}>
           <Button
             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"

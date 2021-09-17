@@ -15,6 +15,7 @@ import PCLoginPage from "views/PCLoginPage/LoginPage.js";
 import PCRegisterPage from "views/PCRegisterPage/RegisterPage.js";
 import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
 import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
+import PCProfilePage from "views/PCProfilePage/PCProfilePage";
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -22,7 +23,8 @@ ReactDOM.render(
     <Switch>
       <Route path="/components" component={Components} />
       <Route path="/landing-page" component={LandingPage} />
-      <Route path="/profile-page" component={ProfilePage} />
+      <Route path="/profile-pageOG" component={ProfilePage} />
+      <Route path="/profile-page" component={PCProfilePage} />
       <Route path="/login-page" component={PCLoginPage} />
       <Route path="/register-page" component={PCRegisterPage} />
       <Route path="/register-child-page" component={PCRegisterChild} />
