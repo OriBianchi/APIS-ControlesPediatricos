@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -8,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 
 const styles = {
   grid: {
-    marginRight: "-150px",
+    marginRight: "-15px",
     marginLeft: "-15px",
     width: "auto",
   },
