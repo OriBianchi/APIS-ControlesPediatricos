@@ -9,16 +9,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-// import Tooltip from "@material-ui/core/Tooltip";
-
-// @material-ui/icons
-// import { Apps, CloudDownload } from "@material-ui/icons";
-
-// core components
-// import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 import { Link } from "react-router-dom";
 import { Box } from "@material-ui/core";
@@ -28,26 +20,16 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      
       <Link to={"profile-page"} className={classes.link}>
         <Button  color="rose">
           <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
-
         </Button>
       </Link>
-
       <Link to={"/"} className={classes.link}>
         <Button  color="info">
           Cerrar Sesión
-
         </Button>
       </Link>
-
-
-
-
-
-
     </List>
   );
 }
