@@ -9,7 +9,7 @@ import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 //Calendario 
 //import Date from "react-datetime";
-import "assets/css/calendario.css";
+//import "assets/css/calendario.css";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 // Sexo
 import FormControlLabel from "@material-ui/core/FormControlLabel";

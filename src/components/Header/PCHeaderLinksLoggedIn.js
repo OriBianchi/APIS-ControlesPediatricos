@@ -28,31 +28,23 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Box m={0.3}>
-          <Button
-            href="/profile-page"
-            color="primary"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
-          </Button>
-        </Box>
-      </ListItem>
-      <ListItem className={classes.listItegitm}>
-        <Box m={0.3}>
-          <Button
-            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-            color="info"
-            href="/"
-            target="_blank"
-            className={classes.navLink}
-          >
-            Cerrar Sesión
-          </Button>
-        </Box>
-      </ListItem>
+      <Button
+        href="/profile-page"
+        color="primary"
+        target="_blank"
+        className={classes.navLink}
+      >
+        <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
+      </Button>
+      <Button
+        href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+        color="info"
+        href="/"
+        target="_blank"
+        className={classes.navLink}
+      >
+        Cerrar Sesión
+      </Button>
     </List>
   );
 }
