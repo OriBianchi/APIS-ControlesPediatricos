@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-
 /* eslint-disable prettier/prettier */
 
 import "assets/scss/material-kit-react.scss?v=1.10.0";
@@ -13,7 +12,6 @@ import "assets/scss/material-kit-react.scss?v=1.10.0";
 import Components from "views/Components/Components.js";
 import PCLandingPage from "views/PCLandingPage/PCLandingPage";
 import LandingPage from "views/LandingPage/LandingPage.js";
-import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import PCLoginPage from "views/PCLoginPage/LoginPage.js";
 import PCRegisterPage from "views/PCRegisterPage/RegisterPage.js";
 import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
@@ -30,7 +28,6 @@ ReactDOM.render(
     <Switch>
       <Route path="/components" component={Components} />
       <Route path="/landing-page" component={LandingPage} />
-      <Route path="/profile-pageOG" component={ProfilePage} />
       <Route path="/profile-page" component={PCProfilePage} />
       <Route path="/login-page" component={PCLoginPage} />
       <Route path="/register-page" component={PCRegisterPage} />

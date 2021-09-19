@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -10,14 +11,14 @@ import Favorite from "@material-ui/icons/Favorite";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-//import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import HeaderLinksLI from "components/Header/PCHeaderLinksLoggedIn.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/christian.jpg";
+import profile from "assets/img/faces/placeholder.png";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -47,8 +48,8 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
-        rightLinks={<HeaderLinks />}
+        brand="Pediacare"
+        rightLinks={<HeaderLinksLI />}
         fixed
         changeColorOnScroll={{
           height: 200,
@@ -71,8 +72,15 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
-                    <h6>EDITAR PERFIL</h6>
+                    <h3 className={classes.title}>Nombre Apellido</h3>
+                    <br></br>
+                    <Button
+                      href="/register-child-page"
+                      color="transparent"
+                      target="_blank"
+                      className={classes.navLink}
+                    >Editar Perfil
+                    </Button>
                   </div>
                 </div>
               </GridItem>

@@ -43,7 +43,6 @@ export default function LandingPage(props) {
         filter
         image={require("assets/img/profile-bg.jpg").default}
       />
-
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <BienvenidaUsuario />
