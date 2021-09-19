@@ -166,7 +166,7 @@ export default function LoginPage(props) {
                   </CardFooter>
 
 
-                  <p1 style={{ padding: "0px, 0px, 0px, 2px" }} >
+                  <p1 style={{ padding: "177px" }} >
                     ¿Ya tenes una cuenta?
                     <Link to={"login-page"} className={classes.link}> Ingresá </Link>
 
