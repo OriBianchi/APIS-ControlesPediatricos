@@ -30,7 +30,7 @@ export default function HeaderLinks(props) {
     <List className={classes.list}>
       
       <Link to={"profile-page"} className={classes.link}>
-        <Button  color="primary">
+        <Button  color="rose">
           <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
 
         </Button>
