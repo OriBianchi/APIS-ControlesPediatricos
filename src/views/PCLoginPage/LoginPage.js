@@ -20,7 +20,6 @@ import Slide from "@material-ui/core/Slide";
 
 // core components
 import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -54,8 +53,6 @@ export default function LoginPage(props) {
         absolute
         color="info"
         brand="PediaCare"
-        rightLinks={<HeaderLinks />
-        }
         {...rest}
       />
       <div
@@ -68,7 +65,7 @@ export default function LoginPage(props) {
       >
         <div className={classes.container}>
           <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={6}>
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>

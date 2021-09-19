@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 /* eslint-disable prettier/prettier */
 
@@ -17,7 +18,11 @@ import PCLoginPage from "views/PCLoginPage/LoginPage.js";
 import PCRegisterPage from "views/PCRegisterPage/RegisterPage.js";
 import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
 import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
-import PCProfilePage from "views/PCProfilePage/PCProfilePage";
+import PCProfilePage from "views/PCProfilePage/PCProfilePage.js";
+import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
+
+
+
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -31,6 +36,7 @@ ReactDOM.render(
       <Route path="/register-page" component={PCRegisterPage} />
       <Route path="/register-child-page" component={PCRegisterChild} />
       <Route path="/landing-page-LI" component={PCLandingPageLogin} />
+      <Route path="/register-control" component={PCRegisterControl} />
       <Route path="/" component={PCLandingPage} />
     </Switch>
   </Router>,

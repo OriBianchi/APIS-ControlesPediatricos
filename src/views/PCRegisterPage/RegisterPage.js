@@ -11,7 +11,6 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import FingerprintIcon from '@material-ui/icons/Fingerprint';
 // core components
 import Header from "components/Header/Header.js";
-import HeaderLinksLogin from "components/Header/PCHeaderLinksLogin.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -43,10 +42,6 @@ export default function LoginPage(props) {
         absolute
         color="info"
         brand="PediaCare"
-
-        rightLinks={<HeaderLinksLogin
-        />
-        }
         {...rest}
       />
       <div
@@ -59,7 +54,7 @@ export default function LoginPage(props) {
       >
         <div className={classes.container}>
           <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={6}>
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>
@@ -171,7 +166,7 @@ export default function LoginPage(props) {
                   </CardFooter>
 
 
-                  <p1 style={{ padding: "80px" }} >
+                  <p1 style={{ padding: "0px, 0px, 0px, 2px" }} >
                     ¿Ya tenes una cuenta?
                     <Link to={"login-page"} className={classes.link}> Ingresá </Link>
 
