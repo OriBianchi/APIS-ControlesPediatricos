@@ -52,29 +52,20 @@ export default function HeaderLinks(props) {
         />
       </ListItem> */}
       <ListItem className={classes.listItem}>
-        <Box m={0.3}>
-          <Button
-            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-            color="info"
-            href="/login-page"
-            target="_blank"
-            className={classes.navLink}
-          >
+        
+          <Link to={"login-page"} className={classes.link}>
+          <Button color="rose">
             <AccountCircleOutlinedIcon className={classes.icons} /> Iniciar Sesión
+
           </Button>
-        </Box>
-      </ListItem>
-        <ListItem className={classes.listItem}>
-        <Box m={0.3}>
-          <Button
-            href="/register-child-page"
-            color="warning"
-            target="_blank"
-            className={classes.navLink}
-          >
+        </Link>
+
+        <Link to={"register-page"} className={classes.link}>
+          <Button color="info">
             <AccountCircleOutlinedIcon className={classes.icons} /> Registrarme
+
           </Button>
-          </Box>
+        </Link>
         </ListItem>
       {/*       <ListItem className={classes.listItem}>
         <Tooltip title="Delete">

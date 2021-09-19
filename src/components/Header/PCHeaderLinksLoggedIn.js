@@ -28,29 +28,24 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <Button
-        href="/profile-page"
-        color="primary"
-        target="_blank"
-        className={classes.navLink}
-      >
-        <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
-      </Button>
-      <Button
-        href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-        color="info"
-        href="/"
-        target="_blank"
-        className={classes.navLink}
-      >
-        Cerrar Sesión
-      </Button>
+      
       <Link to={"profile-page"} className={classes.link}>
         <Button  color="primary">
           <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
 
         </Button>
       </Link>
+
+      <Link to={"/"} className={classes.link}>
+        <Button  color="info">
+          Cerrar Sesión
+
+        </Button>
+      </Link>
+
+
+
+
 
 
     </List>

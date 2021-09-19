@@ -35,10 +35,6 @@ export default function LandingPage(props) {
         brand="PediaCare"
         rightLinks={<HeaderLinks />}
         fixed
-        changeColorOnScroll={{
-          height: 600,
-          color: "transparent",
-        }}
         {...rest}
       />
       <Parallax filter image={require("assets/img/lp.png").default}>

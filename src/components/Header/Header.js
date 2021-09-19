@@ -69,7 +69,7 @@ export default function Header(props) {
   const brandComponent = (
     <Link to={"/"} className={classes.link}>
     <Grid>
-      <Button className={classes.title} >
+      <Button className={classes.title} style={{textdecoration:"none", color: "white"}}>
       <Health className="slick-icons" style={{ fontSize: 30 }}/>
         {brand}
       </Button>
