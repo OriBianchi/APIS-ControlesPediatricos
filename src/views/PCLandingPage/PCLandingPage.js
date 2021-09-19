@@ -20,6 +20,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import Articulos from "./Sections/ArticulosInteres.js";
 
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -42,6 +43,7 @@ export default function LandingPage(props) {
           <Carousel />
         </div>
       </Parallax>
+
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <Articulos />
