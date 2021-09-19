@@ -45,6 +45,14 @@ export default function HeaderLinks(props) {
       >
         Cerrar Sesión
       </Button>
+      <Link to={"profile-page"} className={classes.link}>
+        <Button  color="primary">
+          <AccountCircleOutlinedIcon className={classes.icons} /> Mi Perfil
+
+        </Button>
+      </Link>
+
+
     </List>
   );
 }
