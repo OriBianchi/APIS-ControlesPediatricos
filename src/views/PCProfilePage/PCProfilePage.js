@@ -37,7 +37,7 @@ import profile from "assets/img/faces/placeholder.png";
 
 //Card
 import Card from "components/Card/Card.js"
-import CardBody from "components/Card/CardBody.js"
+import ChildCard from "./ChildCard";
 
 const useStyles = makeStyles(styles);
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -74,337 +74,257 @@ export default function ProfilePage(props) {
         image={require("assets/img/profile-bg.jpg").default}
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <div>
-          <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <div>
-                    <img src={profile} alt="..." className={imageClasses} />
-                  </div>
-                  <div className={classes.name}>
-                    <h2 className={classes.title}>Oriana Giacchino</h2>
-                    <br></br>
-                    <Button
-                      color="primary"
-                      target="_blank"
-                      onClick={() => setClassicModal(true)}
-                      className={classes.navLink}
-                    >Editar Perfil
-                    </Button>
+        <div className={classes.container}>
 
-
-                    <Dialog
-                      classes={{
-                        root: classes.center,
-                        paper: classes.modal,
-                      }}
-                      open={classicModal}
-                      TransitionComponent={Transition}
-                      keepMounted
-                      onClose={() => setClassicModal(false)}
-                      aria-labelledby="classic-modal-slide-title"
-                      aria-describedby="classic-modal-slide-description"
-                    >
-                      <DialogTitle
-                        id="classic-modal-slide-title"
-                        disableTypography
-                        className={classes.modalHeader}
-                      >
-                        <IconButton
-                          style={{ padding: "0px 0px 0px 0px" }}
-                          className={classes.modalCloseButton}
-                          key="close"
-                          aria-label="Close"
-                          color="inherit"
-                          onClick={() => setClassicModal(false)}
-                        >
-                          <Close className={classes.modalClose} />
-
-                        </IconButton>
-
-                        <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 200px", margin: "0px" }}>Editar Perfil</h3>
-                      </DialogTitle>
-
-
-                      <DialogContent
-                        id="classic-modal-slide-description"
-                        className={classes.modalBody}
-                      >
-                        <CustomInput
-                          labelText="Nombre..."
-                          id="Nombre"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "Nombre",
-                            defaultValue: "Oriana",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <People className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-                        <CustomInput
-                          labelText="Apellido..."
-                          id="Apellido"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "Apellido",
-                            defaultValue: "Giacchino",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <People className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-
-                        <CustomInput
-                          labelText="Número de celular..."
-                          id="Número de celular"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "Número de celular",
-                            defaultValue: "+54 11 5935-3148",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <PhoneIcon className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-                        <CustomInput
-                          labelText="DNI..."
-                          id="DNI"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "DNI",
-                            defaultValue: "42721936",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <FingerprintIcon className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-                        <CustomInput
-                          labelText="Email..."
-                          id="email"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "email",
-                            defaultValue: "correofalso123@gmail.com",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <Email className={classes.inputIconsColor} />
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-                        <CustomInput
-                          labelText="Contraseña Nueva"
-                          id="pass"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "Contraseña",
-                            placeholder: "Introduce una contraseña nueva...",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <Icon className={classes.inputIconsColor}>
-                                  lock_outline
-                                </Icon>
-                              </InputAdornment>
-                            ),
-                            autoComplete: "off",
-                          }}
-                        />
-                        <p>
-                          Confirma los cambios introduciendo tu contraseña actual:
-                        </p>
-                        <CustomInput
-                          labelText="Contraseña"
-                          id="pass"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                          inputProps={{
-                            type: "Contraseña",
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <Icon className={classes.inputIconsColor}>
-                                  lock_outline
-                                </Icon>
-                              </InputAdornment>
-                            ),
-                            autoComplete: "off",
-                          }}
-                        />
-                      </DialogContent>
-
-
-                      <DialogActions className={classes.modalFooter}>
-                        <Button
-                          onClick={() => setClassicModal(false)}
-                          color="default"
-                          round
-                        >
-                          Cancelar
-                        </Button>
-                        <Button color="info" round
-                          onClick={() => setClassicModal(false)}>
-                          Editar
-                        </Button>
-                      </DialogActions>
-                    </Dialog>
-
-
-                  </div>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.profile}>
+                <div>
+                  <img src={profile} alt="..." className={imageClasses} />
                 </div>
-              </GridItem>
-            </GridContainer>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
-                <dl>
-                  <dt>Nombre Completo:</dt>
-                  <dd>Oriana Giacchino</dd>
-                  <dt>DNI:</dt>
-                  <dd>42721936</dd>
-                </dl>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
-                <dl>
-                  <dt>Correo Electrónico:</dt>
-                  <dd>correofalso123@gmail.com</dd>
-                  <dt>Teléfono:</dt>
-                  <dd>+54 11 5935-3148</dd>
-                </dl>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
-                <h3 className={classes.title}>Tus hijos:</h3>
-              </GridItem>
+                <div className={classes.name}>
+                  <h2 className={classes.title}>Oriana Giacchino</h2>
+                  <br></br>
+                  <Button
+                    color="primary"
+                    target="_blank"
+                    onClick={() => setClassicModal(true)}
+                    className={classes.navLink}
+                  >Editar Perfil
+                  </Button>
+                </div>
+              </div>
+            </GridItem>
+          </GridContainer>
 
-            </GridContainer>
+          <GridContainer justify="center">
+            {/* ------- Datos del Usuario --------------*/}
+            <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
+              <dl>
+                <dt>Nombre Completo:</dt>
+                <dd>Oriana Giacchino</dd>
+                <dt>DNI:</dt>
+                <dd>42721936</dd>
+              </dl>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
+              <dl>
+                <dt>Correo Electrónico:</dt>
+                <dd>correofalso123@gmail.com</dd>
+                <dt>Teléfono:</dt>
+                <dd>+54 11 5935-3148</dd>
+              </dl>
+            </GridItem>
 
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
-                <Card>
-                  <h3>Aquiles Bailo</h3>
-                  <hr></hr>
-                  <GridContainer style={{ justify: "center" }}>
-                    <GridItem xs={12} sm={12} md={5} className={classes.navWrapper}>
-                      <dl>
-                        <dt>Sexo:</dt>
-                        <dd>Masculino</dd>
-                        <dt>Edad:</dt>
-                        <dd>2 años</dd>
-                        <dt>DNI:</dt>
-                        <dd>42721936</dd>
-                      </dl>
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={5} className={classes.navWrapper}>
-                      <dl>
-                        <dt>Nacimiento:</dt>
-                        <dd>12/3/2019</dd>
-                        <dt>Grupo Sanguíneo:</dt>
-                        <dd>A+</dd>
-                        <dt>Alergias:</dt>
-                        <dd>Polen, Maní</dd>
-                      </dl>
-                    </GridItem>
-                  </GridContainer>
-                  <CardBody>
-                    <Button
-                      color="primary"
-                      target="_blank"
-                      className={classes.navLink}
-                    >Controles
-                    </Button>
-                    <Button
-                      color="primary"
-                      target="_blank"
-                      className={classes.navLink}
-                    >Vacunas
-                    </Button>
-                  </CardBody>
+            {/* ------- Tus Hijos --------------*/}
+            <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
+              <h3 className={classes.title}>Tus hijos:</h3>
+            </GridItem>
 
-                </Card>
-              </GridItem>
+          </GridContainer>
 
-              <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
-                <Card>
-                  <h3>Raúl Bianchi</h3>
-                  <hr></hr>
-                  <GridContainer style={{ justify: "center" }}>
-                    <GridItem xs={12} sm={12} md={5} className={classes.navWrapper}>
-                      <dl>
-                        <dt>Sexo:</dt>
-                        <dd>Masculino</dd>
-                        <dt>Edad:</dt>
-                        <dd>2 años</dd>
-                        <dt>DNI:</dt>
-                        <dd>42721936</dd>
-                      </dl>
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={5} className={classes.navWrapper}>
-                      <dl>
-                        <dt>Nacimiento:</dt>
-                        <dd>12/3/2019</dd>
-                        <dt>Grupo Sanguíneo:</dt>
-                        <dd>A+</dd>
-                        <dt>Alergias:</dt>
-                        <dd>Polen, Maní</dd>
-                      </dl>
-                    </GridItem>
-                  </GridContainer>
-                  <CardBody>
-                    <Button
-                      color="primary"
-                      target="_blank"
-                      className={classes.navLink}
-                    >Controles
-                    </Button>
-                    <Button
-                      color="primary"
-                      target="_blank"
-                      className={classes.navLink}
-                    >Vacunas
-                    </Button>
-                  </CardBody>
+            {/* -----    Contenedor de Hijos   -------*/}
+          <GridContainer>
 
-                </Card>
-              </GridItem>
+            <ChildCard />
 
-              <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
-                <Card>
-                  <Link to={"register-child-page"}>
-                    <Button
-                      color="transparent"
-                      target="_blank"
-                      className={classes.navLink}
-                      size="large">
-                      Añadir
-                    </Button>
-                  </Link>
-                </Card>
-              </GridItem>
-            </GridContainer>
-          </div>
+            <ChildCard />
+
+            <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
+              <Card>
+                <Link to={"register-child-page"}>
+                  <Button
+                    color="transparent"
+                    target="_blank"
+                    className={classes.navLink}
+                    size="large">
+                    Añadir
+                  </Button>
+                </Link>
+              </Card>
+            </GridItem>
+
+          </GridContainer>
         </div>
       </div>
       <Footer />
+
+      {/* ------- MODAL: Editar Perfil --------------*/}
+      <Dialog
+        classes={{
+          root: classes.center,
+          paper: classes.modal,
+        }}
+        open={classicModal}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={() => setClassicModal(false)}
+        aria-labelledby="classic-modal-slide-title"
+        aria-describedby="classic-modal-slide-description"
+      >
+        <DialogTitle
+          id="classic-modal-slide-title"
+          disableTypography
+          className={classes.modalHeader}
+        >
+          <IconButton
+            style={{ padding: "0px 0px 0px 0px" }}
+            className={classes.modalCloseButton}
+            key="close"
+            aria-label="Close"
+            color="inherit"
+            onClick={() => setClassicModal(false)}
+          >
+            <Close className={classes.modalClose} />
+
+          </IconButton>
+
+          <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 200px", margin: "0px" }}>Editar Perfil</h3>
+        </DialogTitle>
+
+
+        <DialogContent
+          id="classic-modal-slide-description"
+          className={classes.modalBody}
+        >
+          <CustomInput
+            labelText="Nombre..."
+            id="Nombre"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "Nombre",
+              defaultValue: "Oriana",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <People className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <CustomInput
+            labelText="Apellido..."
+            id="Apellido"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "Apellido",
+              defaultValue: "Giacchino",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <People className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          <CustomInput
+            labelText="Número de celular..."
+            id="Número de celular"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "Número de celular",
+              defaultValue: "+54 11 5935-3148",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <PhoneIcon className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <CustomInput
+            labelText="DNI..."
+            id="DNI"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "DNI",
+              defaultValue: "42721936",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <FingerprintIcon className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <CustomInput
+            labelText="Email..."
+            id="email"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "email",
+              defaultValue: "correofalso123@gmail.com",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Email className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <CustomInput
+            labelText="Contraseña Nueva"
+            id="pass"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "Contraseña",
+              placeholder: "Introduce una contraseña nueva...",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Icon className={classes.inputIconsColor}>
+                    lock_outline
+                  </Icon>
+                </InputAdornment>
+              ),
+              autoComplete: "off",
+            }}
+          />
+          <p>
+            Confirma los cambios introduciendo tu contraseña actual:
+          </p>
+          <CustomInput
+            labelText="Contraseña"
+            id="pass"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: "Contraseña",
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Icon className={classes.inputIconsColor}>
+                    lock_outline
+                  </Icon>
+                </InputAdornment>
+              ),
+              autoComplete: "off",
+            }}
+          />
+        </DialogContent>
+
+
+        <DialogActions className={classes.modalFooter}>
+          <Button
+            onClick={() => setClassicModal(false)}
+            color="default"
+            round
+          >
+            Cancelar
+          </Button>
+          <Button color="info" round
+            onClick={() => setClassicModal(false)}>
+            Editar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div >
   );
 }

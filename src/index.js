@@ -3,9 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-/* eslint-disable prettier/prettier */
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "assets/scss/material-kit-react.scss?v=1.10.0";
 
 // pages for this product
@@ -18,7 +16,7 @@ import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
 import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
 import PCProfilePage from "views/PCProfilePage/PCProfilePage.js";
 import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
-
+import PCVaccinesView from "views/PCVaccinesView/PCVaccinesView.js";
 
 
 var hist = createBrowserHistory();
@@ -26,14 +24,29 @@ var hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
+      {/* Componentes ORIGINAL */}
       <Route path="/components" component={Components} />
+      {/* Landing Page ORIGINAL */}
       <Route path="/landing-page" component={LandingPage} />
+
+      {/* Perfil */}
       <Route path="/profile-page" component={PCProfilePage} />
+      {/* Loguearse */}
       <Route path="/login-page" component={PCLoginPage} />
+      {/* Registro */}
       <Route path="/register-page" component={PCRegisterPage} />
+      {/* Registrar Hijo */}
       <Route path="/register-child-page" component={PCRegisterChild} />
-      <Route path="/landing-page-LI" component={PCLandingPageLogin} />
+      {/* Registrar Control */}
       <Route path="/register-control" component={PCRegisterControl} />
+      {/* Landing Page Logueado */}
+      <Route path="/landing-page-LI" component={PCLandingPageLogin} />
+      {/* Vacunas */}
+      <Route path="/vaccines" component={PCVaccinesView} />
+      {/* Vacunas */}
+      <Route path="/vaccines" component={PCVaccinesView} />
+      
+      {/* Landing Page */}
       <Route path="/" component={PCLandingPage} />
     </Switch>
   </Router>,
