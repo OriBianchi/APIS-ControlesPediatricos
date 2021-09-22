@@ -28,15 +28,25 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      
-      
 
-      <Link to={"/"} className={classes.link}>
-        <Button  color="info">
-          Cerrar Sesión
 
-        </Button>
-      </Link>
+      {/*----------- Inicio --------- */}
+      <ListItem className={classes.listItem}>
+        <Link to={"landing-page-LI"} className={classes.link}>
+          <Button color="rose">
+                 Inicio     
+          </Button>
+        </Link>
+      </ListItem>
+
+      {/*----------- Cerrar Sesión --------- */}
+      <ListItem className={classes.listItem}>
+        <Link to={"/"} className={classes.link}>
+          <Button color="info">
+            Cerrar Sesión
+          </Button>
+        </Link>
+      </ListItem>
 
 
 

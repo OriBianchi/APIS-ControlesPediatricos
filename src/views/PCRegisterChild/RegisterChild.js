@@ -15,7 +15,7 @@ import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 
 //Sangre
 //import Form from 'react-bootstrap/Form'
-import Select from "components/Select/Select";
+import Select from "components/Select/SelectSangre";
 
 //Enfermedades
 import Checkbox from "@material-ui/core/Checkbox";
@@ -92,7 +92,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>
-                    <h4>Registrar Hij@</h4>
+                    <h4>Registrar Hijo</h4>
 
                   </CardHeader>
                   <CardBody>
@@ -322,7 +322,6 @@ export default function LoginPage(props) {
                                 <Checkbox
                                   tabIndex={-1}
                                   onClick={() => handleToggle(22)}
-                                  checked={checked.indexOf(22) !== -1 ? true : false}
                                   checkedIcon={<Check className={classes.checkedIcon} />}
                                   icon={<Check className={classes.uncheckedIcon} />}
                                   classes={{
@@ -371,7 +370,6 @@ export default function LoginPage(props) {
                                 <Checkbox
                                   tabIndex={-1}
                                   onClick={() => handleToggle(24)}
-                                  checked={checked.indexOf(24) !== -1 ? true : false}
                                   checkedIcon={<Check className={classes.checkedIcon} />}
                                   icon={<Check className={classes.uncheckedIcon} />}
                                   classes={{
@@ -550,9 +548,9 @@ export default function LoginPage(props) {
 
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Link to={"register-page"} className={classes.link}>
+                    <Link to={"/"} className={classes.link}>
                       <Button round color="default" size="md">
-                        Anterior
+                        Cancelar
                       </Button>
                     </Link>
                     
