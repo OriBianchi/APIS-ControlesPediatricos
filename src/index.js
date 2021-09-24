@@ -16,10 +16,13 @@ import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
 import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
 import PCProfilePage from "views/PCProfilePage/PCProfilePage.js";
 import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
+import PCRegisterControlCabeza from "views/PCRegisterControlCabeza/RegisterControlCabeza.js";
 import PCVaccinesView from "views/PCVaccinesView/PCVaccinesView.js";
 import PCRegisterVacuna from "views/PCRegisterVacuna/RegisterVacuna.js";
 import PCPercentiles from "views/PCPercentiles/Percentiles.js";
 import PCControles from "views/PCControlsView/PCControlsView.js"
+import LoginPage from "views/LoginPage/LoginPage";
+
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -29,6 +32,8 @@ ReactDOM.render(
       <Route path="/components" component={Components} />
       {/* Landing Page ORIGINAL */}
       <Route path="/landing-page" component={LandingPage} />
+      {/* Login Page ORIGINAL */}
+      <Route path="/login-pageOG" component={LoginPage} />
 
       {/* Perfil */}
       <Route path="/profile-page" component={PCProfilePage} />
@@ -50,7 +55,9 @@ ReactDOM.render(
       <Route path="/controls" component={PCControles} />
       {/* Registrar Control */}
       <Route path="/register-control" component={PCRegisterControl} />      
-
+      {/* Registrar Control Cabeza */}
+      <Route path="/register-control-cabeza" component={PCRegisterControlCabeza} />
+      
       {/* Landing Page */}
       <Route path="/" component={PCLandingPage} />
     </Switch>

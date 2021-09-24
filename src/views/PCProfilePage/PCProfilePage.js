@@ -278,7 +278,7 @@ export default function ProfilePage(props) {
               fullWidth: true,
             }}
             inputProps={{
-              type: "Contraseña",
+              type: "password",
               placeholder: "Introduce una contraseña nueva...",
               endAdornment: (
                 <InputAdornment position="end">
@@ -319,7 +319,7 @@ export default function ProfilePage(props) {
               fullWidth: true,
             }}
             inputProps={{
-              type: "Contraseña",
+              type: "password",
               endAdornment: (
                 <InputAdornment position="end">
                   <Icon className={classes.inputIconsColor}>

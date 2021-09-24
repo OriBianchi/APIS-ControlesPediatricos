@@ -88,7 +88,7 @@ export default function ProfilePage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
               <Card>
-                <Link to={"register-control"}>
+                <Link to={"register-control-cabeza"}>
                   <Button
                     color="transparent"
                     target="_blank"

@@ -4,7 +4,6 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // Cuerpo
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -24,16 +23,6 @@ import minaEstatura from "assets/img/Curvas/Mina Estatura.jpg"
 import pibeEstatura from "assets/img/Curvas/Pibe Estatura.jpg"
 import minaCabeza from "assets/img/Curvas/Mina Cabeza.jpg"
 import pibeCabeza from "assets/img/Curvas/Pibe Cabeza.jpg"
-
-
-
-
-
-//import VacunasTable from "components/Table/VacunasTable.js"
-
-//Icons -- Media
-
-
 
 const useStyles = makeStyles(styles);
 export default function ProfilePage(props) {
@@ -85,7 +74,6 @@ export default function ProfilePage(props) {
             </GridItem>
           </GridContainer>
 
-
           <GridItem xs={12} sm={12} md={12}>
             <GridContainer>
               <h style={{ fontWeight: "bold",fontSize: "3em", color: "#F199C4"}}>Niñas</h>
@@ -102,9 +90,6 @@ export default function ProfilePage(props) {
             <h1 className={classes.title}>Peso</h1>
           </GridContainer>
         </div>
-
-
-
 
         <div>
           <GridItem xs={0} sm={0} md={12} lg={12}>
@@ -162,20 +147,6 @@ export default function ProfilePage(props) {
 
           <br/>
           <br/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
       </div>

@@ -64,14 +64,14 @@ export default function LoginPage(props) {
 
                   </CardHeader>
                   <CardBody>
-                  
+
                   <p> Estas Registrando un registro a: </p> <p style={{ fontWeight: "bold", fontSize: "1.3em" }}>Aquiles Bailo</p>
                   <hr></hr>
 
                     <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha del Control:</p>
-                        <GridItem xs={7} sm={9} md={9}>
+                        <GridItem xs={7} sm={8} md={9}>
 
                           <br />
                           <DatePickerComponent placeholder="    Seleccione fecha del control" format="dd-MMM-yy"></DatePickerComponent>
@@ -81,7 +81,7 @@ export default function LoginPage(props) {
 
                     <GridContainer>
 
-                      <GridItem xs={6} sm={6} md={6} lg={6}>
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Peso..."
                           id="float"
@@ -90,8 +90,8 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
- 
-                      <GridItem xs={6} sm={6} md={6} lg={6}>
+
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Altura..."
                           id="float"
@@ -100,9 +100,18 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
-                      
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
+                        <CustomInput
+                          labelText="Diametro Cabeza..."
+                          id="float"
+                          formControlProps={{
+                            fullWidth: true,
+                          }}
+                        />
+                      </GridItem>
                     </GridContainer>
 
+                  
                     <CustomInput
                       labelText="Observaciones..."
                       id="obs"
@@ -158,7 +167,7 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-                    
+
                     <CustomInput
                       labelText="Estudios Medicos..."
                       id="otras"
@@ -189,6 +198,7 @@ export default function LoginPage(props) {
                         ),
                       }}
                     />
+
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to={"controls"} className={classes.link}>
@@ -203,7 +213,6 @@ export default function LoginPage(props) {
                       </Button>
                     </Link>
                   </CardFooter>
-
 
                   <p className={classes.divider}></p>
                 </form>

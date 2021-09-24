@@ -3,7 +3,6 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-
 // @material-ui/icons
 import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
@@ -12,21 +11,14 @@ import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissa
 //Calendario 
 import "assets/css/calendario.css";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
-
 //Sangre
-//import Form from 'react-bootstrap/Form'
 import Select from "components/Select/SelectSangre";
-
 //Enfermedades
 import Checkbox from "@material-ui/core/Checkbox";
 import Check from "@material-ui/icons/Check";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-
-
-
-
 // core components
 import Header from "components/Header/Header.js";
 //import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -49,7 +41,6 @@ export default function LoginPage(props) {
   const [selectedEnabled, setSelectedEnabled] = React.useState("b");
   const [checked, setChecked] = React.useState([24, 22]);
 
-
   const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -61,7 +52,6 @@ export default function LoginPage(props) {
     }
     setChecked(newChecked);
   };
-
 
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
@@ -144,27 +134,20 @@ export default function LoginPage(props) {
                       }}
                     />
 
-
-
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha de Nacimiento:</p>
-                        <GridItem xs={6} sm={6} md={7}>
-
+                        <GridItem xs={6} sm={7} md={7}>
                           <br />
                           <DatePickerComponent placeholder="   Seleccione fecha de nacimiento" format="dd-MMM-yy"></DatePickerComponent>
                         </GridItem>
                       </GridContainer>
                     </GridItem>
 
-
-
-
-
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Grupo Sanguíneo:</p>
-                        <GridItem xs={6} sm={6} md={8}>
+                        <GridItem xs={7} sm={8} md={8}>
 
                           <br />
                           <Select></Select>
@@ -173,16 +156,6 @@ export default function LoginPage(props) {
                     </GridItem>
 
                     <p></p>
-
-
-
-
-
-
-
-
-
-
 
                     <p>Sexo:</p>
 
@@ -222,9 +195,7 @@ export default function LoginPage(props) {
                             label="Femenino"
                           />
                         </div>
-                        <GridItem xs={12} sm={12} md={6}>
-
-
+                        <GridItem xs={6} sm={6} md={6}>
 
                           <div
                             className={
@@ -265,21 +236,7 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-
-
-
-
                     <p></p>
-
-
-
-
-
-
-
-
-
-
 
                     <p>Enfermedades crónicas:</p>
 
@@ -394,7 +351,6 @@ export default function LoginPage(props) {
                         <GridItem xs={1} sm={1} md={1} lg={1}>
                         </GridItem>
 
-
                         <GridItem xs={12} sm={6} md={4} lg={3}>
 
                           <div
@@ -505,7 +461,6 @@ export default function LoginPage(props) {
                           </div>
                         </GridItem>
 
-
                       </GridContainer>
                     </div>
                     <CustomInput
@@ -539,13 +494,6 @@ export default function LoginPage(props) {
                       }}
                     />
 
-
-
-
-
-
-
-
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to={"/"} className={classes.link}>
@@ -561,11 +509,6 @@ export default function LoginPage(props) {
                       </Button>
                     </Link>
                   </CardFooter>
-
-
-
-
-
 
                   <p className={classes.divider}></p>
                 </form>
