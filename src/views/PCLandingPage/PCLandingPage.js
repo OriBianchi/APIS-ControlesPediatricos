@@ -14,7 +14,7 @@ import Footer from "components/Footer/Footer.js";
 // import GridItem from "components/Grid/GridItem.js";
 // import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+//import Parallax from "components/Parallax/Parallax.js";
 import Carousel from "components/Carousel/Carousel.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
@@ -38,11 +38,11 @@ export default function LandingPage(props) {
         fixed
         {...rest}
       />
-      <Parallax filter image={require("assets/img/lp.png").default}>
-        <div className={classes.container}>
-          <Carousel />
-        </div>
-      </Parallax>
+      
+
+        <Carousel />
+      
+
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>

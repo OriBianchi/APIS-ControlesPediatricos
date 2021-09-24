@@ -13,6 +13,8 @@ import image1 from "assets/img/Carousel/cr1.png";
 import image2 from "assets/img/Carousel/cr2.png";
 import image3 from "assets/img/Carousel/cr3.png";
 
+
+
 //                 <Health className="slick-icons" style={{ fontSize: 50 }}/>  
 
 export default function SectionCarousel(){

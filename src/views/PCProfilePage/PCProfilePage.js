@@ -182,7 +182,10 @@ export default function ProfilePage(props) {
 
           </IconButton>
 
-          <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 200px", margin: "0px" }}>Editar Perfil</h3>
+          <GridContainer justify="center">
+            <h3 className={classes.modalTitle} >Editar Perfil</h3>
+          </GridContainer>
+
         </DialogTitle>
 
 
