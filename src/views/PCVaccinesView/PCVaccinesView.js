@@ -174,14 +174,10 @@ export default function ProfilePage(props) {
         <DialogActions className={classes.modalFooter}>
           <Button
             onClick={() => setClassicModal(false)}
-            color="default"
+            color="info"
             round
           >
-            Cancelar
-          </Button>
-          <Button color="info" round
-            onClick={() => setClassicModal(false)}>
-            Editar
+            Cerrar
           </Button>
         </DialogActions>
       </Dialog>
