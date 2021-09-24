@@ -11,20 +11,11 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import "assets/css/calendario.css";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 
-
 import Select from "components/Select/SelectVacunas";
-
-//Otras vacu
-
-//import FormControlLabel from "@material-ui/core/FormControlLabel";
-
 
 import Checkbox from "@material-ui/core/Checkbox";
 import Check from "@material-ui/icons/AddCircleOutline";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-
-
-
 
 // core components
 import Header from "components/Header/Header.js";
@@ -46,7 +37,6 @@ const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
   const [checked, setChecked] = React.useState([24, 22]);
-
 
   const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
@@ -93,10 +83,8 @@ export default function LoginPage(props) {
                   </CardHeader>
                   <CardBody>
 
-
                   <p> Estas Registrando una vacuna a: </p> <p style={{ fontWeight: "bold", fontSize: "1.3em" }}>Aquiles Bailo</p>
                   <hr></hr>
-                 
 
                     <GridItem xs={6} sm={6} md={12}>
                       <GridContainer>
@@ -161,7 +149,6 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-
                     <GridItem xs={6} sm={6} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha de Vacunación: </p>
@@ -189,13 +176,6 @@ export default function LoginPage(props) {
                       }}
                     />
 
-
-
-
-
-
-
-
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to={"vaccines"} className={classes.link}>
@@ -210,11 +190,6 @@ export default function LoginPage(props) {
                       </Button>
                     </Link>
                   </CardFooter>
-
-
-
-
-
 
                   <p className={classes.divider}></p>
                 </form>

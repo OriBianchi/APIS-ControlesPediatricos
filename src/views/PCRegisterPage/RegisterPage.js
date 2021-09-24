@@ -24,10 +24,7 @@ import { Link } from "react-router-dom";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import image from "assets/img/bg7.jpg";
 
-
 const useStyles = makeStyles(styles);
-
-
 
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
@@ -59,7 +56,6 @@ export default function LoginPage(props) {
                 <form className={classes.form}>
                   <CardHeader color="info" className={classes.cardHeader}>
                     <h4>Registrarse</h4>
-
 
                   </CardHeader>
                   <CardBody>
@@ -165,13 +161,14 @@ export default function LoginPage(props) {
                     </Link>
                   </CardFooter>
 
+                  <GridContainer justify="center">
+                    <p1 >
+                      ¿Ya tenes una cuenta?
+                      <Link to={"login-page"} className={classes.link}> Ingresá </Link>
+                    </p1>
+                  </GridContainer>
 
-                  <p1 style={{ padding: "177px" }} >
-                    ¿Ya tenes una cuenta?
-                    <Link to={"login-page"} className={classes.link}> Ingresá </Link>
-
-                  </p1>
-
+                  
 
 
                   <p className={classes.divider}></p>

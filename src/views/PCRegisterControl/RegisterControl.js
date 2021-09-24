@@ -1,23 +1,17 @@
 /* eslint-disable prettier/prettier */
-
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
-
 // @material-ui/icons
-
 import VisibilityIcon from '@material-ui/icons/Visibility';
-
+import AssignmentIcon from '@material-ui/icons/Assignment';
 //Calendario 
 import "assets/css/calendario.css";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import { DateRangePickerComponent } from "@syncfusion/ej2-react-calendars";
-
-//Sangre
 //import Form from 'react-bootstrap/Form'
 import SelectMedicamentos from "components/Select/SelectMedicamentos";
-
 // core components
 import Header from "components/Header/Header.js";
 //import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -71,10 +65,6 @@ export default function LoginPage(props) {
                   </CardHeader>
                   <CardBody>
 
-
-
-
-
                     <GridItem xs={6} sm={6} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha del Control:</p>
@@ -85,10 +75,6 @@ export default function LoginPage(props) {
                         </GridItem>
                       </GridContainer>
                     </GridItem>
-
-
-
-
 
                     <GridContainer>
 
@@ -114,24 +100,6 @@ export default function LoginPage(props) {
                       
                     </GridContainer>
 
-
-                    <CustomInput
-                      labelText="Observaciones..."
-                      id="obs"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "obs",
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <VisibilityIcon className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-
-
                     <GridContainer>
 
                       <GridItem xs={12} sm={4} md={4} lg={6}>
@@ -143,10 +111,6 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
-
-
-
-
 
                       <GridItem xs={12} sm={4} md={4} lg={3}>
                         <CustomInput
@@ -164,7 +128,6 @@ export default function LoginPage(props) {
                       </GridItem>
                     </GridContainer>
 
-
                     <GridItem xs={6} sm={6} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Periodo de medicación:   </p>
@@ -176,25 +139,35 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <CustomInput
+                      labelText="Observaciones..."
+                      id="obs"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "obs",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <VisibilityIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    
                     <CustomInput
                       labelText="Estudios Medicos..."
                       id="otras"
                       formControlProps={{
                         fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "obs",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <AssignmentIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
                       }}
                     />
                     <CustomInput
@@ -203,19 +176,15 @@ export default function LoginPage(props) {
                       formControlProps={{
                         fullWidth: true,
                       }}
+                      inputProps={{
+                        type: "obs",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <AssignmentIcon className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        ),
+                      }}
                     />
-
-
-
-
-
-
-
-
-
-
-
-
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to={"register-page"} className={classes.link}>
@@ -230,10 +199,6 @@ export default function LoginPage(props) {
                       </Button>
                     </Link>
                   </CardFooter>
-
-
-
-
 
 
                   <p className={classes.divider}></p>

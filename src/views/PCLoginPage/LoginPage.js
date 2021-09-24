@@ -12,12 +12,8 @@ import Close from "@material-ui/icons/Close";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Dialog from "@material-ui/core/Dialog";
-//import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
-
-
-
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -112,7 +108,6 @@ export default function LoginPage(props) {
                       color="primary" simple
                       block
                       onClick={() => setClassicModal(true)}
-
                     >
                       ¿Olvidaste tu contraseña?
                     </Button>
@@ -145,16 +140,21 @@ export default function LoginPage(props) {
 
                         </IconButton>
 
-                        <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 160px", margin: "0px" }}>Recuperar Contraseña</h3>
+                        <GridContainer justify="center">
+                          <h3 className={classes.modalTitle}>Recuperar Contraseña</h3>
+                        </GridContainer>
 
                       </DialogTitle>
                       <DialogContent
                         id="classic-modal-slide-description"
                         className={classes.modalBody}
                       >
-                        <p style={{ padding: "0px 0px 0px 20px" }}>
-                          Te enviaremos un correo con una contraseña nueva para que puedas ingresar nuevamente.
-                        </p>
+                        <GridContainer justify="center">
+                          <p>
+                            Te enviaremos un correo con una contraseña nueva para que puedas ingresar nuevamente.
+                          </p>
+                        </GridContainer>
+
                         <CustomInput
                           labelText="Email..."
                           id="email"
@@ -170,16 +170,16 @@ export default function LoginPage(props) {
                             ),
                           }}
                         />
+                        <GridContainer justify="center">
+                          <img src={ballena} width="120" heigh="50"></img>
+                        </GridContainer>
 
-                        <img src={ballena} width="350" heigh="150" style={{ padding: "0px 0px 0px 230px" }}></img>
                       </DialogContent>
                       <DialogActions className={classes.modalFooter}>
                         <Button
                           onClick={() => setClassicModal(false)}
                           color="default"
                           round
-
-
                         >
                           Cancelar
                         </Button>
@@ -200,18 +200,17 @@ export default function LoginPage(props) {
                     </Link>
                   </CardFooter>
 
+                  <GridContainer justify="center">
+                    <p1>
+                      ¿No tenes una cuenta?
+                      <Link to={"register-page"} className={classes.link}> Registrate</Link>
+                    </p1>
+                  </GridContainer>
 
 
-
-                  <p1 style={{ padding: "167px" }} >
-                    ¿No tenes una cuenta?
-                    <Link to={"register-page"} className={classes.link}> Registrate</Link>
-                  </p1>
-                  <p className={classes.divider}></p>
+                  <br />
 
 
-
-                  <p className={classes.divider}></p>
                 </form>
               </Card>
             </GridItem>
