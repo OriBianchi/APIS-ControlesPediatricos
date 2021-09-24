@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 // react component for creating beautiful carousel
 import Carousel from "react-slick";
