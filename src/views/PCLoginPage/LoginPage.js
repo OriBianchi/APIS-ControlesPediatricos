@@ -189,7 +189,7 @@ export default function LoginPage(props) {
 
                       </DialogActions>
                     </Dialog>
-                  
+
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to={"landing-page-li"} className={classes.link}>
@@ -203,7 +203,7 @@ export default function LoginPage(props) {
 
 
 
-                  <p1 style={{ padding: "72.5px" }} >
+                  <p1 style={{ padding: "167px" }} >
                     ¿No tenes una cuenta?
                     <Link to={"register-page"} className={classes.link}> Registrate</Link>
                   </p1>

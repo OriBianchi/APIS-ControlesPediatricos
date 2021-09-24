@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // Cuerpo
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import HeaderLinksLI from "components/Header/PCHeaderLinksLoggedIn.js";
+import HeaderLinksLI from "components/Header/PCHeaderLinksPerfil";
 //Core
 import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";

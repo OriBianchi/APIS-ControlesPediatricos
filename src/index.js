@@ -17,7 +17,8 @@ import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
 import PCProfilePage from "views/PCProfilePage/PCProfilePage.js";
 import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
 import PCVaccinesView from "views/PCVaccinesView/PCVaccinesView.js";
-
+import PCRegisterVacuna from "views/PCRegisterVacuna/RegisterVacuna.js";
+import PCPercentiles from "views/PCPercentiles/Percentiles.js";
 
 var hist = createBrowserHistory();
 
@@ -45,6 +46,10 @@ ReactDOM.render(
       <Route path="/vaccines" component={PCVaccinesView} />
       {/* Vacunas */}
       <Route path="/vaccines" component={PCVaccinesView} />
+      {/* RegistrarVacunas */}
+      <Route path="/register-vaccine" component={PCRegisterVacuna} />
+      {/* Percentiles */}
+      <Route path="/percentiles" component={PCPercentiles} />
       
       {/* Landing Page */}
       <Route path="/" component={PCLandingPage} />

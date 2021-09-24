@@ -109,7 +109,7 @@ export default function ProfilePage(props) {
               </Button>
               <br></br>
               <Card>
-                <Link to={"register-vaccine"}>
+                <Link to={"register-vaccine"}className={classes.link}>
                   <Button
                     color="transparent"
                     target="_blank"
