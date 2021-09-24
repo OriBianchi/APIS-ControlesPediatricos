@@ -126,7 +126,7 @@ export default function ProfilePage(props) {
 
           </GridContainer>
 
-            {/* -----    Contenedor de Hijos   -------*/}
+          {/* -----    Contenedor de Hijos   -------*/}
           <GridContainer>
 
             <ChildCard />
@@ -290,6 +290,25 @@ export default function ProfilePage(props) {
               autoComplete: "off",
             }}
           />
+
+
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={4}>
+              <br></br>
+              <p>Subir nueva foto de perfil</p>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={3}>
+              <Button
+                variant="contained"
+                component="label">
+                Sube un archivo
+                <input
+                  type="file"
+                  hidden />
+              </Button>
+            </GridItem>
+          </GridContainer>
+          <br></br>
           <p>
             Confirma los cambios introduciendo tu contraseña actual:
           </p>
