@@ -65,10 +65,10 @@ export default function LoginPage(props) {
                   </CardHeader>
                   <CardBody>
 
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha del Control:</p>
-                        <GridItem xs={6} sm={6} md={9}>
+                        <GridItem xs={7} sm={8} md={9}>
 
                           <br />
                           <DatePickerComponent placeholder="    Seleccione fecha del control" format="dd-MMM-yy"></DatePickerComponent>
@@ -78,7 +78,7 @@ export default function LoginPage(props) {
 
                     <GridContainer>
 
-                      <GridItem xs={12} sm={4} md={4} lg={4}>
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Peso..."
                           id="float"
@@ -88,7 +88,7 @@ export default function LoginPage(props) {
                         />
                       </GridItem>
 
-                      <GridItem xs={12} sm={4} md={4} lg={4}>
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Altura..."
                           id="float"
@@ -97,7 +97,7 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
-                      <GridItem xs={12} sm={4} md={4} lg={4}>
+                      <GridItem xs={4} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Diametro Cabeza..."
                           id="float"
@@ -108,45 +108,7 @@ export default function LoginPage(props) {
                       </GridItem>
                     </GridContainer>
 
-                    <GridContainer>
-
-                      <GridItem xs={12} sm={4} md={4} lg={6}>
-                        <CustomInput
-                          labelText="Medicamentos..."
-                          id="float"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                        />
-                      </GridItem>
-
-                      <GridItem xs={12} sm={4} md={4} lg={3}>
-                        <CustomInput
-                          labelText="Dosis"
-                          id="float"
-                          formControlProps={{
-                            fullWidth: true,
-                          }}
-                        />
-                      </GridItem>
-
-                      <GridItem xs={12} sm={4} md={4} lg={3}>
-                        <br></br>
-                        <SelectMedicamentos></SelectMedicamentos>
-                      </GridItem>
-                    </GridContainer>
-
-                    <GridItem xs={6} sm={6} md={12}>
-                      <GridContainer>
-                        <p className={classes.divider}>Periodo de medicación:   </p>
-                        <GridItem xs={6} sm={6} md={8}>
-
-                          <br />
-                          <DateRangePickerComponent placeholder="    Seleccione un periodo..." format="dd-MMM-yy"></DateRangePickerComponent>
-                        </GridItem>
-                      </GridContainer>
-                    </GridItem>
-
+                  
                     <CustomInput
                       labelText="Observaciones..."
                       id="obs"
@@ -162,6 +124,46 @@ export default function LoginPage(props) {
                         ),
                       }}
                     />
+
+                    <GridContainer>
+
+                      <GridItem xs={12} sm={4} md={4} lg={6}>
+                        <CustomInput
+                          labelText="Medicamentos..."
+                          id="float"
+                          formControlProps={{
+                            fullWidth: true,
+                          }}
+                        />
+                      </GridItem>
+
+                      <GridItem xs={6} sm={4} md={4} lg={3}>
+                        <CustomInput
+                          labelText="Dosis"
+                          id="float"
+                          formControlProps={{
+                            fullWidth: true,
+                          }}
+                        />
+                      </GridItem>
+
+                      <GridItem xs={6} sm={4} md={4} lg={3}>
+                        <br></br>
+                        <SelectMedicamentos></SelectMedicamentos>
+                      </GridItem>
+                    </GridContainer>
+
+                    <GridItem xs={12} sm={12} md={12}>
+                      <GridContainer>
+                        <p className={classes.divider}>Periodo de medicación:   </p>
+                        <GridItem xs={12} sm={12} md={8}>
+
+                          <br />
+                          <DateRangePickerComponent placeholder="    Seleccione un periodo..." format="dd-MMM-yy"></DateRangePickerComponent>
+                        </GridItem>
+                      </GridContainer>
+                    </GridItem>
+
 
                     <CustomInput
                       labelText="Estudios Medicos..."

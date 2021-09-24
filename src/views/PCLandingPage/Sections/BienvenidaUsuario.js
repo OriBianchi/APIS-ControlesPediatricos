@@ -2,6 +2,8 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
+
 
 // @material-ui/icons
 import Event from "@material-ui/icons/Event";
@@ -13,6 +15,7 @@ import GridItem from "components/Grid/GridItem.js";
 import InfoArea from "components/InfoArea/InfoArea.js";
 import Hands from "components/Animations/Hands/Hands.js"
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
+
 
 const useStyles = makeStyles(styles);
 
@@ -62,7 +65,7 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title={<a href="http://www.materna.com.ar/tabla-de-percentiles">Compare controles con percentiles de la OMS</a>}
+              title= {<Link to={"percentiles"} className={classes.link}> Compare controles con percentiles de la OMS </Link>}
               description="Elija un control y compare con los percentiles de Curva de Crecimiento ofrecidos por la Organizacion Mundial de la Salud"
               icon={QueryStats}
               iconColor="warning"

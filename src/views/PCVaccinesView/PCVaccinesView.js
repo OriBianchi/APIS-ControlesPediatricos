@@ -122,7 +122,6 @@ export default function ProfilePage(props) {
             </GridItem>
 
 
-
           </GridContainer>
         </div>
       </div>
@@ -161,7 +160,7 @@ export default function ProfilePage(props) {
           <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 0px", margin: "10px" }}>Calendario de Vacunas</h3>
         </DialogTitle>
 
-        <img src={calendariovac}></img>
+        <img src={calendariovac}style={{ width: "1000px"}}></img>
         <DialogContent
           id="classic-modal-slide-description"
           className={classes.modalBody}

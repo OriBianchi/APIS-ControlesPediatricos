@@ -134,21 +134,20 @@ export default function LoginPage(props) {
                       }}
                     />
 
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha de Nacimiento:</p>
-                        <GridItem xs={6} sm={6} md={7}>
-
+                        <GridItem xs={6} sm={7} md={7}>
                           <br />
                           <DatePickerComponent placeholder="   Seleccione fecha de nacimiento" format="dd-MMM-yy"></DatePickerComponent>
                         </GridItem>
                       </GridContainer>
                     </GridItem>
 
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Grupo Sanguíneo:</p>
-                        <GridItem xs={6} sm={6} md={8}>
+                        <GridItem xs={7} sm={8} md={8}>
 
                           <br />
                           <Select></Select>
@@ -196,7 +195,7 @@ export default function LoginPage(props) {
                             label="Femenino"
                           />
                         </div>
-                        <GridItem xs={12} sm={12} md={6}>
+                        <GridItem xs={6} sm={6} md={6}>
 
                           <div
                             className={

@@ -86,13 +86,15 @@ export default function LoginPage(props) {
                   <p> Estas Registrando una vacuna a: </p> <p style={{ fontWeight: "bold", fontSize: "1.3em" }}>Aquiles Bailo</p>
                   <hr></hr>
 
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Vacuna:</p>
-                        <GridItem xs={6} sm={6} md={2}>
-                        </GridItem>
-                        <GridItem xs={6} sm={6} md={8}>
 
+                        <GridItem xs={2} sm={2} md={2}>
+                          
+                        </GridItem>
+                        
+                        <GridItem xs={12} sm={8} md={8}>
                           <br />
                           <Select></Select>
                         </GridItem>
@@ -130,10 +132,10 @@ export default function LoginPage(props) {
                           }
                           />
                         
-                        <GridItem xs={6} sm={6} md={1}>
+                        <GridItem xs={1} sm={1} md={1}>
                         </GridItem>
 
-                        <GridItem xs={12} sm={12} md={8}>
+                        <GridItem xs={12} sm={8} md={8}>
                           <CustomInput
                             labelText="Nombre de vacuna..."
                             id="lugar"
@@ -149,10 +151,10 @@ export default function LoginPage(props) {
                       </GridContainer>
                     </GridItem>
 
-                    <GridItem xs={6} sm={6} md={12}>
+                    <GridItem xs={12} sm={12} md={12}>
                       <GridContainer>
                         <p className={classes.divider}>Fecha de Vacunación: </p>
-                        <GridItem xs={6} sm={6} md={8}>
+                        <GridItem xs={6} sm={8} md={8}>
                           <br />
                           <DatePickerComponent placeholder="   Seleccione fecha de vacunación" format="dd-MMM-yy"></DatePickerComponent>
                         </GridItem>
@@ -161,7 +163,7 @@ export default function LoginPage(props) {
 
                     <br />
                     <CustomInput
-                      labelText="Lugar de Vacunación"
+                      labelText="Lugar de Vacunación..."
                       id="lugar"
                       formControlProps={{
                         fullWidth: true,

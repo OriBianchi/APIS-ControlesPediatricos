@@ -30,13 +30,20 @@ import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import image from "assets/img/bg7.jpg";
 import ballena from "assets/img/CuteCons/ballena.jpg";
 
+
 const useStyles = makeStyles(styles);
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
+
+
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [classicModal, setClassicModal] = React.useState(false);
+  const Alerta=()=>{
+    alert("¡Te enviamos un correo con tu nueva contraseña!")
+    setClassicModal(false)
+  }
 
   setTimeout(function () {
     setCardAnimation("");
@@ -183,9 +190,11 @@ export default function LoginPage(props) {
                         >
                           Cancelar
                         </Button>
-                        <Button color="info" round onClick={() => alert("¡Te enviamos un correo con tu nueva contraseña!")}>
+                        <Button color="info" round onClick={() => Alerta()}>
                           Enviar
                         </Button>
+                        
+
 
                       </DialogActions>
                     </Dialog>
