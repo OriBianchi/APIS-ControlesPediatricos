@@ -47,12 +47,14 @@ export default function ChildCard() {
                     </GridItem>
                 </GridContainer>
                 <CardBody>
-                    <Button
-                        color="primary"
-                        target="_blank"
-                        className={classes.navLink}
-                    >Controles
-                    </Button>
+                    <Link to={"controls"}>
+                        <Button
+                            color="primary"
+                            target="_blank"
+                            className={classes.navLink}
+                        >Controles
+                        </Button>
+                    </Link>
                     <Link to={"vaccines"}>
                         <Button
                             color="primary"

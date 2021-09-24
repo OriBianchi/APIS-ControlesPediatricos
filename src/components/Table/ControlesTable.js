@@ -1,375 +1,174 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/prop-types */
-
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@material-ui/core/Box';
-import Collapse from '@material-ui/core/Collapse';
-import IconButton from '@material-ui/core/IconButton';
+import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
-function createData(nombre, cantdosis, dosisdadas, dosis) {
-    return {
-        nombre,
-        cantdosis,
-        dosisdadas,
-        dosispendientes: cantdosis - dosisdadas,
-        dosis,
-    };
-}
-
-function Row(props) {
-    const { row } = props;
-    const [open, setOpen] = React.useState(false);
-
-    return (
-        <React.Fragment>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-                <TableCell>
-                    <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(!open)}
-                    >
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
-                </TableCell>
-                <TableCell component="th" scope="row">{row.nombre}</TableCell>
-                <TableCell align="right">{row.cantdosis}</TableCell>
-                <TableCell align="right">{row.dosisdadas}</TableCell>
-                <TableCell align="right">{row.dosispendientes}</TableCell>
-            </TableRow>
-            <TableRow>
-                <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ margin: 1 }}>
-                            <Typography variant="h6" gutterBottom component="div">Dosis</Typography>
-                            <Table size="small" aria-label="purchases">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>Nro. Dosis</TableCell>
-                                        <TableCell>Edad Prevista</TableCell>
-                                        <TableCell align="right">¿Administrada?</TableCell>
-                                        <TableCell align="right">Fecha de Administración</TableCell>
-                                        <TableCell align="right">Lugar de Administración</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {row.dosis.map((dosisRow) => (
-                                        <TableRow key={dosisRow.nroDosis}>
-                                            <TableCell component="th" scope="row">{dosisRow.nroDosis}</TableCell>
-                                            <TableCell>{dosisRow.edadPrevista}</TableCell>
-                                            <TableCell align="right">{dosisRow.administrada}</TableCell>
-                                            <TableCell align="right">{dosisRow.fechaAdmin}</TableCell>
-                                            <TableCell align="right">{dosisRow.lugar}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </Box>
-                    </Collapse>
-                </TableCell>
-            </TableRow>
-        </React.Fragment>
-    );
-}
-
-Row.propTypes = {
-    row: PropTypes.shape({
-        cantdosis: PropTypes.number.isRequired,
-        carbs: PropTypes.number.isRequired,
-        dosisdadas: PropTypes.number.isRequired,
-        dosis
-            : PropTypes.arrayOf(
-                PropTypes.shape({
-                    amount: PropTypes.number.isRequired,
-                    customerId: PropTypes.string.isRequired,
-                    date: PropTypes.string.isRequired,
-                }),
-            ).isRequired,
-        nombre: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        protein: PropTypes.number.isRequired,
-    }).isRequired,
-};
-
-const rows = [
-    createData('BCG', 1, 1, [
-        {
-            nroDosis: 1,
-            edadPrevista: "Recién Nacido",
-            administrada: "Sí",
-            fechaAdmin: "20-9-2000",
-            lugar: "Hospital Italiano"
-        }]),
-    createData('Hepatitis B', 2, 1, [
-        {
-            nroDosis: 1,
-            edadPrevista: "Recién Nacido",
-            administrada: "Sí",
-            fechaAdmin: "20-9-2000",
-            lugar: "Hospital Italiano"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "11 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Pentavalente A', 3, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "2 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "4 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "6 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Rotavirus', 2, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "2 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "4 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Pentavalente B', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "15-18 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Salk (Poliomelitis)', 4, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "2 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "4 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "6 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 4,
-            edadPrevista: "5-6 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Neumococo Conjugada', 3, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "2 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "4 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "12 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Gripe', 5, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "6 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "12 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "15 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 4,
-            edadPrevista: "15-18 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 5,
-            edadPrevista: "24 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Meningococo', 4, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "3 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "5 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "15 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 4,
-            edadPrevista: "11 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Triple Viral', 2, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "12 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 2,
-            edadPrevista: "5-6 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        },
-        {
-            nroDosis: 3,
-            edadPrevista: "11 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Hepatitis A', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "12 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Varicela', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "15 Meses",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Triple Bacteriana Celular', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "5-6 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('Triple Bacteriana Acelular', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "11 Años",
-            administrada: "No",
-            fechaAdmin: "-",
-            lugar: "-"
-        }]),
-    createData('HPV', 1, 0, [
-        {
-            nroDosis: 1,
-            edadPrevista: "11 Años",
-            administrada: "Sí",
-            fechaAdmin: "20-9-2000",
-            lugar: "Hospital Italiano"
-        }])
+const columns = [
+  { id: 'id', label: 'Nro', minWidth: 50 },
+  { id: 'fechaControl', label: 'Fecha', minWidth: 100 },  
+  
+{
+    id: 'peso',
+    label: 'Peso',
+    minWidth: 70,
+    align: 'right',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'altura',
+    label: 'Altura',
+    minWidth: 50,
+    align: 'right',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'anchoCabeza',
+    label: 'Cabeza',
+    minWidth: 50,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'medicamento',
+    label: 'Medicamento',
+    minWidth: 100,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'dosis',
+    label: 'Dosis',
+    minWidth: 50,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'periodoAplicacion',
+    label: 'Aplicacion',
+    minWidth: 100,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'estudio',
+    label: 'Estudio',
+    minWidth: 100,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'resultado',
+    label: 'Resultado',
+    minWidth: 100,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: 'observaciones',
+    label: 'Observaciones',
+    minWidth: 150,
+    align: 'center',
+    format: (value) => value.toFixed(2),
+  },
 ];
 
-export default function CollapsibleTable() {
-    return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell />
-                        <TableCell>Vacuna</TableCell>
-                        <TableCell align="right">Dosis Totales</TableCell>
-                        <TableCell align="right">Dosis Administradas</TableCell>
-                        <TableCell align="right">Dosis Pendientes</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <Row key={row.nombre} row={row} />
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    );
+function createData(id, fechaControl, altura, peso, anchoCabeza, medicamento, dosis, periodoAplicacion, estudio,resultado,observaciones) {
+  return { id, fechaControl, altura, peso, anchoCabeza, medicamento, dosis, periodoAplicacion,estudio, resultado, observaciones};
+}
+
+const rows = [
+  createData('1', '20/Sept/2000', "75 cm", "10kg","10cm","Tafirol","1 capsula","20/Sept/2000 - 25/Sept/2000","Hemograma Completo","Normal","Fiebre alta"),
+  createData('2', '21/Sept/2000', "75 cm", "12kg","11cm","-","-","-","-","-","Chequeo diario"),
+  createData('3', '22/Sept/2000', "76 cm", "11kg","11cm","Omega 3","2 capsulas","22/Sept/2000 - 30/Sept/2000","Perfil Lipídico","Anormal","Colesterol alto"),
+  createData('4', '23/Sept/2000', "76 cm", "13kg","12cm","-","-","-","-","-","Chequeo diario"),
+  createData('5', '24/Sept/2000', "76 cm", "12kg","12cm","-","-","-","-","-","Chequeo diario"),
+];
+
+export default function ColumnGroupingTable() {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+  return (
+    <Paper sx={{ width: '100%' }}>
+      <TableContainer>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" colSpan={2}>
+              Datos de Control
+              </TableCell>
+              <TableCell align="center" colSpan={3}>
+                Medidas
+              </TableCell>
+              <TableCell align="center" colSpan={3}>
+                Prescripción
+              </TableCell>
+              <TableCell align="center" colSpan={2}>
+                Estudios
+              </TableCell>
+              <TableCell align="center" colSpan={1}>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ top: 57, minWidth: column.minWidth }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row) => {
+                return (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.fechaControl}>
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {column.format && typeof value === 'number'
+                            ? column.format(value)
+                            : value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </Paper>
+  );
 }

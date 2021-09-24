@@ -43,10 +43,13 @@ const useStyles = makeStyles(styles);
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
+
 export default function ProfilePage(props) {
   // eslint-disable-next-line no-unused-vars
   const [cardAnimation, setCardAnimation] = React.useState("cardHidden");
   const [classicModal, setClassicModal] = React.useState(false);
+
+
 
   setTimeout(function () {
     setCardAnimation("");

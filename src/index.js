@@ -19,7 +19,7 @@ import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
 import PCVaccinesView from "views/PCVaccinesView/PCVaccinesView.js";
 import PCRegisterVacuna from "views/PCRegisterVacuna/RegisterVacuna.js";
 import PCPercentiles from "views/PCPercentiles/Percentiles.js";
-
+import PCControles from "views/PCControlsView/PCControlsView.js"
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -38,19 +38,19 @@ ReactDOM.render(
       <Route path="/register-page" component={PCRegisterPage} />
       {/* Registrar Hijo */}
       <Route path="/register-child-page" component={PCRegisterChild} />
-      {/* Registrar Control */}
-      <Route path="/register-control" component={PCRegisterControl} />
       {/* Landing Page Logueado */}
       <Route path="/landing-page-LI" component={PCLandingPageLogin} />
       {/* Vacunas */}
       <Route path="/vaccines" component={PCVaccinesView} />
-      {/* Vacunas */}
-      <Route path="/vaccines" component={PCVaccinesView} />
-      {/* RegistrarVacunas */}
+      {/* Registrar Vacunas */}
       <Route path="/register-vaccine" component={PCRegisterVacuna} />
       {/* Percentiles */}
       <Route path="/percentiles" component={PCPercentiles} />
-      
+      {/* Controles */}
+      <Route path="/controls" component={PCControles} />
+      {/* Registrar Control */}
+      <Route path="/register-control" component={PCRegisterControl} />      
+
       {/* Landing Page */}
       <Route path="/" component={PCLandingPage} />
     </Switch>

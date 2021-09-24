@@ -16,7 +16,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import { Link } from "react-router-dom";
-import Vacunita from "assets/img/CuteCons/vacunita.png"
+import Lupita from "assets/img/CuteCons/lupa.png"
 
 import ControlsTable from "components/Table/ControlesTable.js"
 
@@ -56,8 +56,8 @@ export default function ProfilePage(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem>                  <p style={{ color: "white" }}>.</p></GridItem>
-            
-            <img src={Vacunita} style={{ width: "100px", left: "10%", bottom: "8%" }}></img>
+
+            <img src={Lupita} style={{ width: "100px", left: "10%", bottom: "8%" }}></img>
           </GridContainer>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={6}>
@@ -67,7 +67,7 @@ export default function ProfilePage(props) {
                   <p style={{ color: "white" }}>.</p>
                 </div>
                 <div className={classes.name}>
-                  <h2 className={classes.title}>Vacunas</h2>
+                  <h2 className={classes.title}>Controles</h2>
                 </div>
               </div>
             </GridItem>
@@ -75,25 +75,26 @@ export default function ProfilePage(props) {
 
           <GridContainer justify="center">
             {/* ------- Hijo Seleccionado --------------*/}
-            <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
-              <p> Estas viendo las vacunas de:</p> <p style={{ fontWeight: "bold", fontSize: "1.3em" }}>Aquiles Bailo</p>
+            <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
+              <p> Estas viendo los controles de:</p> <p style={{ fontWeight: "bold", fontSize: "1.3em" }}>Aquiles Bailo</p>
             </GridItem>
+            <GridItem xs={12} sm={12} md={12}>
+              <ControlsTable />
+            </GridItem>
+
           </GridContainer>
 
           {/* -----    Contenedor de Tabla  -------*/}
           <GridContainer>
-
-            <ControlsTable />
-
             <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
               <Card>
-                <Link to={"register-vaccine"}>
+                <Link to={"register-control"}>
                   <Button
                     color="transparent"
                     target="_blank"
                     className={classes.navLink}
                     size="large">
-                    Añadir
+                    Añadir Control
                   </Button>
                 </Link>
               </Card>
