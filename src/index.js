@@ -16,6 +16,7 @@ import PCRegisterChild from "views/PCRegisterChild/RegisterChild.js";
 import PCLandingPageLogin from "views/PCLandingPage/PCLandingPageLogin.js";
 import PCProfilePage from "views/PCProfilePage/PCProfilePage.js";
 import PCRegisterControl from "views/PCRegisterControl/RegisterControl.js";
+import PCRegisterControlCabeza from "views/PCRegisterControlCabeza/RegisterControlCabeza.js";
 import PCVaccinesView from "views/PCVaccinesView/PCVaccinesView.js";
 import PCRegisterVacuna from "views/PCRegisterVacuna/RegisterVacuna.js";
 import PCPercentiles from "views/PCPercentiles/Percentiles.js";
@@ -50,6 +51,10 @@ ReactDOM.render(
       <Route path="/register-vaccine" component={PCRegisterVacuna} />
       {/* Percentiles */}
       <Route path="/percentiles" component={PCPercentiles} />
+      {/* Registrar Control Cabeza */}
+      <Route path="/register-control-cabeza" component={PCRegisterControlCabeza} />
+
+
       
       {/* Landing Page */}
       <Route path="/" component={PCLandingPage} />

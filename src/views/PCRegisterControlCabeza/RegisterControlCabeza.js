@@ -101,7 +101,8 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
- 
+
+
                       <GridItem xs={12} sm={4} md={4} lg={4}>
                         <CustomInput
                           labelText="Altura..."
@@ -111,7 +112,15 @@ export default function LoginPage(props) {
                           }}
                         />
                       </GridItem>
-                      
+                      <GridItem xs={12} sm={4} md={4} lg={4}>
+                        <CustomInput
+                          labelText="Diametro Cabeza..."
+                          id="float"
+                          formControlProps={{
+                            fullWidth: true,
+                          }}
+                        />
+                      </GridItem>
                     </GridContainer>
 
 

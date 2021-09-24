@@ -83,7 +83,7 @@ export default function ProfilePage(props) {
                   <img src={profile} alt="..." className={imageClasses} />
                 </div>
                 <div className={classes.name}>
-                  <h2 className={classes.title}>Oriana Giacchino</h2>
+                  <h2 className={classes.title}>Mirtha Legrand</h2>
                   <br></br>
                   <Button
                     color="primary"
@@ -102,9 +102,9 @@ export default function ProfilePage(props) {
             <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
               <dl>
                 <dt>Nombre Completo:</dt>
-                <dd>Oriana Giacchino</dd>
+                <dd>Mirtha Legrand</dd>
                 <dt>DNI:</dt>
-                <dd>42721936</dd>
+                <dd>00000001</dd>
               </dl>
             </GridItem>
             <GridItem xs={12} sm={12} md={3} className={classes.navWrapper}>
@@ -195,7 +195,7 @@ export default function ProfilePage(props) {
             }}
             inputProps={{
               type: "Nombre",
-              defaultValue: "Oriana",
+              defaultValue: "Mirtha",
               endAdornment: (
                 <InputAdornment position="end">
                   <People className={classes.inputIconsColor} />
@@ -211,7 +211,7 @@ export default function ProfilePage(props) {
             }}
             inputProps={{
               type: "Apellido",
-              defaultValue: "Giacchino",
+              defaultValue: "Legrand",
               endAdornment: (
                 <InputAdornment position="end">
                   <People className={classes.inputIconsColor} />
@@ -244,7 +244,7 @@ export default function ProfilePage(props) {
             }}
             inputProps={{
               type: "DNI",
-              defaultValue: "42721936",
+              defaultValue: "00000001",
               endAdornment: (
                 <InputAdornment position="end">
                   <FingerprintIcon className={classes.inputIconsColor} />

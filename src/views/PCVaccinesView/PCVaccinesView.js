@@ -17,8 +17,18 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import { Link } from "react-router-dom";
 import Vacunita from "assets/img/CuteCons/vacunita.png"
-
 import VacunasTable from "components/Table/VacunasTable.js"
+import calendariovac from "assets/img/calendariovacunas.jpg";
+import IconButton from "@material-ui/core/IconButton";
+import Close from "@material-ui/icons/Close";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogActions from "@material-ui/core/DialogActions";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
+
+
+
 
 //Icons -- Media
 
@@ -26,9 +36,13 @@ import VacunasTable from "components/Table/VacunasTable.js"
 import Card from "components/Card/Card.js"
 
 const useStyles = makeStyles(styles);
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 export default function ProfilePage(props) {
   // eslint-disable-next-line no-unused-vars
   const [cardAnimation, setCardAnimation] = React.useState("cardHidden");
+  const [classicModal, setClassicModal] = React.useState(false);
 
   setTimeout(function () {
     setCardAnimation("");
@@ -56,7 +70,7 @@ export default function ProfilePage(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem>                  <p style={{ color: "white" }}>.</p></GridItem>
-            
+
             <img src={Vacunita} style={{ width: "100px", left: "10%", bottom: "8%" }}></img>
           </GridContainer>
           <GridContainer justify="center">
@@ -86,6 +100,14 @@ export default function ProfilePage(props) {
             <VacunasTable />
 
             <GridItem xs={12} sm={12} md={4} className={classes.navWrapper}>
+              <Button
+                color="primary"
+                target="_blank"
+                onClick={() => setClassicModal(true)}
+                className={classes.navLink}
+              >Consultar Calendario de Vacunas
+              </Button>
+              <br></br>
               <Card>
                 <Link to={"register-vaccine"}className={classes.link}>
                   <Button
@@ -93,16 +115,72 @@ export default function ProfilePage(props) {
                     target="_blank"
                     className={classes.navLink}
                     size="large">
-                    Añadir
+                    Añadir Vacuna
                   </Button>
                 </Link>
               </Card>
             </GridItem>
 
+
+
           </GridContainer>
         </div>
       </div>
       <Footer />
+
+
+      <Dialog
+        classes={{
+          root: classes.center,
+          paper: classes.modal,
+        }}
+        open={classicModal}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={() => setClassicModal(false)}
+        aria-labelledby="classic-modal-slide-title"
+        aria-describedby="classic-modal-slide-description"
+      >
+        <DialogTitle
+          id="classic-modal-slide-title"
+          disableTypography
+          className={classes.modalHeader}
+        >
+          <IconButton
+            style={{ padding: "0px 0px 0px 0px" }}
+            className={classes.modalCloseButton}
+            key="close"
+            aria-label="Close"
+            color="inherit"
+            onClick={() => setClassicModal(false)}
+          >
+            <Close className={classes.modalClose} />
+
+          </IconButton>
+
+          <h3 className={classes.modalTitle} style={{ padding: "0px 0px 0px 0px", margin: "10px" }}>Calendario de Vacunas</h3>
+        </DialogTitle>
+
+        <img src={calendariovac}></img>
+        <DialogContent
+          id="classic-modal-slide-description"
+          className={classes.modalBody}
+        >
+
+
+        </DialogContent>
+
+
+        <DialogActions className={classes.modalFooter}>
+          <Button
+            onClick={() => setClassicModal(false)}
+            color="info"
+            round
+          >
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div >
   );
 }
